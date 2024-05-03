@@ -6,8 +6,13 @@
     "packages/react-remote"
   ],
   "scripts": {
-    "install": "yarn install --immutable",
-    "host": "yarn workspace quasar-host print",
-    "remote": "yarn workspace react-remote print"
+    "host:install": "yarn workspace quasar-host print",
+    "remote:install": "cd packages/react-remote && yarn",
+    "host:start": "yarn workspace quasar-host start",
+    "remote:start": "yarn workspace react-remote start",
+    "start": "yarn host:start && yarn remote:start",
+    "host:build": "yarn workspace quasar-host build",
+    "remote:build": "yarn workspace react-remote build",
+    "build": "yarn host:build && yarn remote:build"
   }
 }
