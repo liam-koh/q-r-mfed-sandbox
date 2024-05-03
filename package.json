@@ -6,8 +6,8 @@
     "packages/react-remote"
   ],
   "scripts": {
-    "host:install": "yarn workspace quasar-host print",
-    "remote:install": "cd packages/react-remote && yarn",
+    "host:i": "cd packages/quasar-host && yarn",
+    "remote:i": "cd packages/react-remote && yarn",
     "host:start": "yarn workspace quasar-host start",
     "remote:start": "yarn workspace react-remote start",
     "start": "yarn host:start && yarn remote:start",
