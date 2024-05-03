@@ -1,0 +1,13 @@
+{
+  "name": "q-r-mfed-sandbox",
+  "packageManager": "yarn@4.2.1",
+  "workspaces": [
+    "packages/quasar-host",
+    "packages/react-remote"
+  ],
+  "scripts": {
+    "install": "yarn install --immutable",
+    "build": "yarn workspaces foreach run build",
+    "start": "yarn workspaces foreach run start"
+  }
+}

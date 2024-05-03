@@ -1,0 +1,31 @@
+Arguments: 
+  /Users/o2pluss/.nvm/versions/node/v18.19.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js set version 1.22.9
+
+PATH: 
+  /Users/o2pluss/.nvm/versions/node/v18.19.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/o2pluss/.nvm/versions/node/v18.19.0/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.19.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: Release not found: 1.22.9
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:86358:17
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
