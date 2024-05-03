@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "install": "yarn install --immutable",
-    "build": "yarn workspaces foreach run build",
-    "start": "yarn workspaces foreach run start"
+    "host": "yarn workspace quasar-host print",
+    "remote": "yarn workspace react-remote print"
   }
 }

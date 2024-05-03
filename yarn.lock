@@ -10,3 +10,15 @@ __metadata:
   resolution: "q-r-mfed-sandbox@workspace:."
   languageName: unknown
   linkType: soft
+
+"quasar-host@workspace:packages/quasar-host":
+  version: 0.0.0-use.local
+  resolution: "quasar-host@workspace:packages/quasar-host"
+  languageName: unknown
+  linkType: soft
+
+"react-remote@workspace:packages/react-remote":
+  version: 0.0.0-use.local
+  resolution: "react-remote@workspace:packages/react-remote"
+  languageName: unknown
+  linkType: soft

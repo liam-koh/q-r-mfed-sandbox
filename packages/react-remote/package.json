@@ -1,4 +1,7 @@
 {
   "name": "react-remote",
-  "packageManager": "yarn@4.2.1"
+  "packageManager": "yarn@4.2.1",
+  "scripts": {
+    "print": "echo 'Hello, world1'"
+  }
 }
