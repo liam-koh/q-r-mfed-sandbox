@@ -4,7 +4,7 @@
       <button @click="() => emit('close')">close</button>
       <RemoteModuleRenderer
         :load-remote-module="loadRemoteModule"
-        :remote-props="{}"
+        :props="{}"
       />
     </div>
   </ModalWrapper>

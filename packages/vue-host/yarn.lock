@@ -5004,7 +5004,7 @@ __metadata:
     vue: "npm:3"
     vue-loader: "npm:16.8.3"
     vue-template-compiler: "npm:2.7.16"
-    webpack: "npm:^5.88.2"
+    webpack: "npm:^5.91.0"
     webpack-cli: "npm:4.10.0"
     webpack-dev-server: "npm:4.15.1"
   languageName: unknown
@@ -5183,7 +5183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.88.2":
+"webpack@npm:^5.91.0":
   version: 5.91.0
   resolution: "webpack@npm:5.91.0"
   dependencies:

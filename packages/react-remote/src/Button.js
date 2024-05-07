@@ -23,9 +23,6 @@ export default ({ text = 'Home Button', onClick }) => {
       <Suspense fallback={<div>loading...</div>}>
         <Jotai />
         <button onClick={onClickHandler}>{text}</button>
-        <QueryClientProvider client={queryClient}>
-          <RQuery />
-        </QueryClientProvider>
       </Suspense>
     </>
   );

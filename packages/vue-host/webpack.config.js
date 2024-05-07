@@ -71,7 +71,6 @@ module.exports = (env = {}) => ({
       name: 'layout',
       remotes: {
         home: prodEntryUrl,
-        home: env.production ? prodEntryUrl : localEntryUrl,
       },
       shared: {
         ...deps,
