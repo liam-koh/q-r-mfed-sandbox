@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback, Suspense } from 'react';
 import Jotai from './Jotai';
-// import RQuery from './RQuery';
-// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import RQuery from './RQuery';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// const queryClient = new QueryClient({});
+const queryClient = new QueryClient({});
 
 export default ({ text = 'Home Button', onClick }) => {
   const onClickHandler = useCallback(() => {
@@ -22,10 +22,10 @@ export default ({ text = 'Home Button', onClick }) => {
     <>
       <Suspense fallback={<div>loading...</div>}>
         <Jotai />
-        {/* <RQuery /> */}
         <button onClick={onClickHandler}>{text}</button>
-        {/* <QueryClientProvider client={queryClient}>  
-      </QueryClientProvider> */}
+        <QueryClientProvider client={queryClient}>
+          <RQuery />
+        </QueryClientProvider>
       </Suspense>
     </>
   );
