@@ -1,23 +1,27 @@
-import React, { useEffect } from 'react';
-import { atom, useAtom } from 'jotai';
+import React from 'react';
+import { useRecoilState, RecoilRoot, atom } from 'recoil';
 
-const counterAtom = atom(0);
+const counterState = atom({
+  key: 'counterState',
+  default: 0,
+});
 
-const Jotai = () => {
-  const [count, setCount] = useAtom(counterAtom);
-
-  useEffect(() => {
-    console.log('Jotai rendered 111111');
-  }, [counterAtom])
-  console.log('Jotai rendered 22222');
+const RecoilCounter = () => {
+  const [count, setCount] = useRecoilState(counterState);
 
   return (
     <div>
-      <h1>Jotai</h1>
+      <h1>Recoil</h1>
       <h2>Counter: {count}</h2>
-      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
-  )
-}
+  );
+};
 
-export default Jotai;
+const RecoilApp = () => (
+  <RecoilRoot>
+    <RecoilCounter />
+  </RecoilRoot>
+);
+
+export default RecoilApp;
