@@ -10,13 +10,13 @@
     "q-host:i": "cd packages/quasar-host && yarn",
     "v-host:i": "cd packages/vue-host && yarn",
     "remote:i": "cd packages/react-remote && yarn",
-    "q-host:start": "yarn workspace quasar-host start",
-    "v-host:start": "yarn workspace vue-host start",
-    "remote:start": "yarn workspace react-remote start",
+    "q:start": "yarn workspace quasar-host start",
+    "v:start": "yarn workspace vue-host start",
+    "r:start": "yarn workspace react-remote start",
     "start": "yarn v-host:start && yarn remote:start",
-    "q-host:build": "yarn workspace quasar-host build",
-    "v-host:build": "yarn workspace vue-host build",
-    "remote:build": "yarn workspace react-remote build",
+    "q:build": "yarn workspace quasar-host build",
+    "v:build": "yarn workspace vue-host build",
+    "r:build": "yarn workspace react-remote build",
     "build": "yarn q-host:build && yarn v-host:build && yarn remote:build"
   }
 }

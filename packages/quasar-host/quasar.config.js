@@ -56,7 +56,9 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       extendWebpack(cfg) {
-        cfg.entry = path.resolve(__dirname, './.quasar/main.js');
+        // 여기
+        const entry = path.resolve(__dirname, './.quasar/main.js');
+        cfg.entry = entry;
         const localEntryUrl = 'home@http://localhost:3002/remoteEntry.js';
         const prodEntryUrl =
           'home@http://module-federation-example.s3-website-ap-southeast-2.amazonaws.com/remoteEntry.js';
@@ -65,8 +67,6 @@ module.exports = configure(function (ctx) {
             name: 'layout',
             remotes: {
               home: ctx.prod ? prodEntryUrl : localEntryUrl,
-              // home: 'home@http://module-federation-example.s3-website-ap-southeast-2.amazonaws.com/remoteEntry.js',
-              // // home: 'home@http://localhost:3002/remoteEntry.js',
             },
             shared: {
               ...deps,

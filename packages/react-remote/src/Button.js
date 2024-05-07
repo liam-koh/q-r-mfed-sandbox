@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, Suspense } from 'react';
 import Jotai from './Jotai';
 // import RQuery from './RQuery';
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -20,11 +20,13 @@ export default ({ text = 'Home Button', onClick }) => {
 
   return (
     <>
+      <Suspense fallback={<div>loading...</div>}>
         <Jotai />
         {/* <RQuery /> */}
         <button onClick={onClickHandler}>{text}</button>
-      {/* <QueryClientProvider client={queryClient}>  
+        {/* <QueryClientProvider client={queryClient}>  
       </QueryClientProvider> */}
+      </Suspense>
     </>
   );
 };
