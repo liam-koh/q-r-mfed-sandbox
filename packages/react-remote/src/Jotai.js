@@ -7,8 +7,9 @@ const Jotai = () => {
   const [count, setCount] = useAtom(counterAtom);
 
   useEffect(() => {
-    console.log('Jotai rendered');
-  },[counterAtom])
+    console.log('Jotai rendered 111111');
+  }, [counterAtom])
+  console.log('Jotai rendered 22222');
 
   return (
     <div>

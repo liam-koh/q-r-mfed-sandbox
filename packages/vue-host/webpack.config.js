@@ -5,6 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
 
+const localEntryUrl = 'home@http://localhost:3002/remoteEntry.js';
+const prodEntryUrl =
+  'home@http://module-federation-example.s3-website-ap-southeast-2.amazonaws.com/remoteEntry.js';
+
 module.exports = (env = {}) => ({
   mode: 'development',
   cache: false,
@@ -66,7 +70,8 @@ module.exports = (env = {}) => ({
     new ModuleFederationPlugin({
       name: 'layout',
       remotes: {
-        home: 'home@http://localhost:3002/remoteEntry.js',
+        home: prodEntryUrl,
+        home: env.production ? prodEntryUrl : localEntryUrl,
       },
       shared: {
         ...deps,
@@ -96,7 +101,8 @@ module.exports = (env = {}) => ({
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
     },
   },
 });
