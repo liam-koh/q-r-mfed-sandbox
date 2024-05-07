@@ -5,7 +5,14 @@
       <RemoteModuleRenderer
         :load-remote-module="loadRemoteModule"
         :props="{}"
-      />
+      >
+      <template #loading>
+        <div>Loading...</div>
+      </template>
+      <template #error>
+        <div>Error...</div>
+      </template>
+    </RemoteModuleRenderer>
     </div>
   </ModalWrapper>
 </template>

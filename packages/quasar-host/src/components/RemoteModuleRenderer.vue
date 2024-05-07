@@ -1,14 +1,18 @@
 <template>
+  <!-- 에러 발생시 -->
   <div v-if="error">
-    <p>module load failed</p>
+    <v-slot name="error" />
   </div>
-  <div v-else ref="root"></div>
+  <div v-else-if="isLoading">
+    <v-slot name="loading" />
+  </div>
+  <div ref="root"></div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, onUpdated, watch } from 'vue';
 import ReactDOM from 'react-dom';
-import { Root, createRoot } from 'react-dom/client';
+import { Container, Root, createRoot } from 'react-dom/client';
 import React from 'react';
 
 /**
@@ -28,13 +32,14 @@ const props = defineProps({
 });
 
 const reactRoot = ref<Root | null>(null);
-const root = ref(null);
+const root = ref<Container | null>(null);
 const error = ref<Error>(); // error 저장
 const remoteModule = ref<Root | null>(null); // entry의 react module str
+const isLoading = ref(true);
 
 const updateReactComponent = () => {
   console.log('$$$$ update', root.value);
-  if (!!error.value || !remoteModule.value) return;
+  if (!!error.value || !remoteModule.value || !root.value) return;
 
   if (!reactRoot.value) {
     reactRoot.value = createRoot(root.value);
@@ -59,6 +64,9 @@ onMounted(() => {
     .catch((e: Error) => {
       console.error('Remote Module Load Error ', e);
       error.value = e;
+    })
+    .finally(() => {
+      isLoading.value = false;
     });
 });
 
