@@ -4,7 +4,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "start:dev": "webpack-cli serve",
+    "start": "webpack-cli serve",
     "serve": "serve dist -p 3001",
     "build": "webpack --mode production",
     "clean": "rm -rf dist"

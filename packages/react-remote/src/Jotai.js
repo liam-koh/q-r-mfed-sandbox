@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { atom, useAtom } from 'jotai';
 
 const counterAtom = atom(0);
 
 const Jotai = () => {
   const [count, setCount] = useAtom(counterAtom);
+
+  useEffect(() => {
+    console.log('Jotai rendered');
+  },[counterAtom])
 
   return (
     <div>

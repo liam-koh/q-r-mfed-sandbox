@@ -4006,30 +4006,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reeact_layout@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "reeact_layout@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.11.0"
-    "@vue/compiler-sfc": "npm:^3.0.11"
-    babel-loader: "npm:^8.1.0"
-    css-loader: "npm:6.10.0"
-    file-loader: "npm:6.2.0"
-    html-webpack-plugin: "npm:5.6.0"
-    mini-css-extract-plugin: "npm:^2.9.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    serve: "npm:^13.0.0"
-    url-loader: "npm:4.1.1"
-    vue: "npm:3"
-    vue-loader: "npm:16.8.3"
-    vue-template-compiler: "npm:2.7.16"
-    webpack: "npm:^5.88.2"
-    webpack-cli: "npm:4.10.0"
-    webpack-dev-server: "npm:4.15.1"
-  languageName: unknown
-  linkType: soft
-
 "registry-auth-token@npm:3.3.2":
   version: 3.3.2
   resolution: "registry-auth-token@npm:3.3.2"
@@ -4916,6 +4892,30 @@ __metadata:
   checksum: 10c0/f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
   languageName: node
   linkType: hard
+
+"vue-host@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "vue-host@workspace:."
+  dependencies:
+    "@babel/core": "npm:^7.11.0"
+    "@vue/compiler-sfc": "npm:^3.0.11"
+    babel-loader: "npm:^8.1.0"
+    css-loader: "npm:6.10.0"
+    file-loader: "npm:6.2.0"
+    html-webpack-plugin: "npm:5.6.0"
+    mini-css-extract-plugin: "npm:^2.9.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    serve: "npm:^13.0.0"
+    url-loader: "npm:4.1.1"
+    vue: "npm:3"
+    vue-loader: "npm:16.8.3"
+    vue-template-compiler: "npm:2.7.16"
+    webpack: "npm:^5.88.2"
+    webpack-cli: "npm:4.10.0"
+    webpack-dev-server: "npm:4.15.1"
+  languageName: unknown
+  linkType: soft
 
 "vue-loader@npm:16.8.3":
   version: 16.8.3
