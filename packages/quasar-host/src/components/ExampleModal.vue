@@ -2,17 +2,14 @@
   <ModalWrapper :isOpen="props.isOpen" @hide="closeDialog">
     <div class="container">
       <button @click="() => emit('close')">close</button>
-      <RemoteModuleRenderer
-        :load-remote-module="loadRemoteModule"
-        :props="{}"
-      >
-      <template #loading>
-        <div>Loading...</div>
-      </template>
-      <template #error>
-        <div>Error...</div>
-      </template>
-    </RemoteModuleRenderer>
+      <RemoteModuleRenderer :load-remote-module="loadRemoteModule" :props="{}">
+        <template #loading>
+          <div>Loading...</div>
+        </template>
+        <template #error>
+          <div>Error...</div>
+        </template>
+      </RemoteModuleRenderer>
     </div>
   </ModalWrapper>
 </template>
@@ -28,10 +25,7 @@ const loadRemoteModule = async () => {
 };
 
 const props = defineProps<{
-  carrier: string;
   isOpen: boolean;
-  productId: number;
-  onClickInventoryCheck: () => void;
 }>();
 
 const emit = defineEmits(['close', 'selectDevice']);

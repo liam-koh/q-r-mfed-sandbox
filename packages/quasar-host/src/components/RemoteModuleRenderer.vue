@@ -31,7 +31,7 @@ const props = defineProps({
   },
 });
 
-const reactRoot = ref<Root | null>(null);
+const reactRoot = ref<Root | null>(null); // react root
 const root = ref<Container | null>(null);
 const error = ref<Error>(); // error 저장
 const remoteModule = ref<Root | null>(null); // entry의 react module str
@@ -42,8 +42,9 @@ const updateReactComponent = () => {
   if (!!error.value || !remoteModule.value || !root.value) return;
 
   if (!reactRoot.value) {
-    reactRoot.value = createRoot(root.value);
+    reactRoot.value = createRoot(root.value); // bundle의 element를 넣음
   }
+  // root에서 컴포넌트 초기화 진행
   reactRoot.value.render(
     React.createElement(remoteModule.value, {
       props: {
@@ -73,7 +74,6 @@ onMounted(() => {
 watch(() => props, updateReactComponent);
 
 onBeforeUnmount(() => {
-  root.value && ReactDOM.unmountComponentAtNode(root.value);
   reactRoot.value && reactRoot.value.unmount();
   reactRoot.value = null;
 });
