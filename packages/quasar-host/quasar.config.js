@@ -33,7 +33,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
-    boot: ['axios', 'pinia'],
+    // boot: ['axios', 'pinia'],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
     css: ['app.css'],
@@ -57,8 +57,7 @@ module.exports = configure(function (ctx) {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       extendWebpack(cfg) {
         // 여기
-        const entry = path.resolve(__dirname, './.quasar/main.js');
-        cfg.entry = entry;
+        cfg.entry = path.resolve(__dirname, './.quasar/main.js');
         const localEntryUrl = 'home@http://localhost:3002/remoteEntry.js';
         const prodEntryUrl =
           'home@http://module-federation-example.s3-website-ap-southeast-2.amazonaws.com/remoteEntry.js';
@@ -77,6 +76,11 @@ module.exports = configure(function (ctx) {
               'react-dom': {
                 singleton: true,
                 requiredVersion: deps['react-dom'],
+              },
+              vue: {
+                singleton: true,
+                requiredVersion: deps.vue,
+                eager: true,
               },
             },
           })
