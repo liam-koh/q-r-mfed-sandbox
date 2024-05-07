@@ -15,7 +15,7 @@
     "remote:start": "yarn workspace react-remote start",
     "start": "yarn q-host:start && v-host:start && yarn remote:start",
     "q-host:build": "yarn workspace quasar-host build",
-    "v-host:build": "yarn workspace quasar-host build",
+    "v-host:build": "yarn workspace vue-host build",
     "remote:build": "yarn workspace react-remote build",
     "build": "yarn q-host:build && yarn v-host:build && yarn remote:build"
   }
