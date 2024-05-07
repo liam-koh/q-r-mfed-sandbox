@@ -47,9 +47,7 @@ const updateReactComponent = () => {
   // root에서 컴포넌트 초기화 진행
   reactRoot.value.render(
     React.createElement(remoteModule.value, {
-      props: {
-        ...props,
-      },
+      ...props.props,
     })
   );
 };
@@ -71,7 +69,7 @@ onMounted(() => {
     });
 });
 
-watch(() => props, updateReactComponent);
+watch(() => props.props, updateReactComponent, { deep: true, immediate: true });
 
 onBeforeUnmount(() => {
   reactRoot.value && reactRoot.value.unmount();

@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient({});
 
-export default ({ text = 'Home Button', onClick }) => {
+export default ({ text = 'Home Button', onClick, inputValue }) => {
   const onClickHandler = useCallback(() => {
     console.log(`Button.js: "${text}" clicked!`);
     onClick?.();
@@ -23,6 +23,7 @@ export default ({ text = 'Home Button', onClick }) => {
       <Suspense fallback={<div>loading...</div>}>
         <Jotai />
         <button onClick={onClickHandler}>{text}</button>
+        <div>input: {inputValue}</div>
       </Suspense>
     </>
   );
