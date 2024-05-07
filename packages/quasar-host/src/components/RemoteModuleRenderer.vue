@@ -1,10 +1,10 @@
 <template>
   <!-- 에러 발생시 -->
   <div v-if="error">
-    <v-slot name="error" />
+    <slot name="error" />
   </div>
   <div v-else-if="isLoading">
-    <v-slot name="loading" />
+    <slot name="loading" />
   </div>
   <div ref="root"></div>
 </template>
