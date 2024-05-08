@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, defineAsyncComponent, ref } from 'vue';
 import ModalWrapper from './ModalWrapper.vue';
-import RemoteModuleRenderer from './RemoteModuleRenderer.vue';
+const RemoteModuleRenderer = defineAsyncComponent(() => import('./RemoteModuleRenderer.vue'));
 
 const loadRemoteModule = async () => {
   const res = (await import('home/Button')).default;
