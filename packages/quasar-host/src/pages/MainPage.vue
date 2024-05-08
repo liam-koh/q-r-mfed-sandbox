@@ -21,7 +21,7 @@
     <p>error handling</p>
     <ErrorBoundary>
       <ErrorComponent />
-      <template #fallback> 로딩중... </template>
+      <template #fallback> 애러 발생!!!! </template>
     </ErrorBoundary>
   </div>
 </template>

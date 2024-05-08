@@ -5,7 +5,7 @@
       {{ count.map((item) => item.create()) }}
     </div>
     <button @click="increment">Increment</button>
-    <button @click="decrement">Decrement</button>
+    <button @click="decrement">Decrement(에러발생)</button>
   </div>
 </template>
 
@@ -20,6 +20,7 @@ const increment = () => {
 
 const decrement = () => {
   count.value--;
+  throw new Error('error');
 };
 </script>
 
