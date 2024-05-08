@@ -41,10 +41,12 @@ module.exports = {
         react: {
           singleton: true,
           requiredVersion: deps.react,
+          eager: false,
         },
         'react-dom': {
           singleton: true,
           requiredVersion: deps['react-dom'],
+          eager: false,
         },
       },
     }),

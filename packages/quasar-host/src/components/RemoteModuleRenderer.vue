@@ -1,17 +1,17 @@
 <template>
   <!-- 에러 발생시 -->
-  <div v-if="error">
+  <div v-if="error" class="mfed-container">
     <slot name="error" />
   </div>
-  <div v-else-if="isLoading">
+  <!-- 로딩 중 -->
+  <div v-else-if="isLoading" class="mfed-container">
     <slot name="loading" />
   </div>
-  <div ref="root"></div>
+  <div ref="root" class="mfed-container"></div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, onUpdated, watch } from 'vue';
-import ReactDOM from 'react-dom';
 import { Container, Root, createRoot } from 'react-dom/client';
 import React from 'react';
 
@@ -46,6 +46,7 @@ const updateReactComponent = () => {
   }
   // root에서 컴포넌트 초기화 진행
   reactRoot.value.render(
+    // TODO: update시에도 써도 되는지 체크
     React.createElement(remoteModule.value, {
       ...props.props,
     })
@@ -76,11 +77,10 @@ onBeforeUnmount(() => {
   reactRoot.value = null;
 });
 </script>
-<style>
-/* .module-container {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  justify-content: center;
-} */
+<style scoped>
+.mfed-container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
 </style>

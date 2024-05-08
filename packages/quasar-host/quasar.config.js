@@ -72,15 +72,12 @@ module.exports = configure(function (ctx) {
               react: {
                 singleton: true,
                 requiredVersion: deps.react,
+                eager: false,
               },
               'react-dom': {
                 singleton: true,
                 requiredVersion: deps['react-dom'],
-              },
-              vue: {
-                singleton: true,
-                requiredVersion: deps.vue,
-                eager: true,
+                eager: false,
               },
             },
           })
