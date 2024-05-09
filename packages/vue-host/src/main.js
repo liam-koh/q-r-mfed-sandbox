@@ -1,9 +1,16 @@
-import { createApp, defineAsyncComponent } from 'vue';
-import Layout from './Layout.vue';
+import { createApp, ref } from 'vue';
+import Layout from './Layout';
 
-// const Button = defineAsyncComponent(() => import('home/Button'));
-const app = createApp(Layout);
+const App = {
+  components: {
+    layout: Layout,
+  },
+  template: `
+    <h1>React in Vue</h1>
+    <div class="app">
+      <layout />
+    </div>
+  `,
+};
 
-// app.component('button-element', Button);
-
-app.mount('#app');
+createApp(App).mount('#app');
