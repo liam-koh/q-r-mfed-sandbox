@@ -22,7 +22,6 @@ export default ({ text = 'Home Button', onClick, inputValue }) => {
     <>
       <Suspense fallback={<div>loading...</div>}>
         <Jotai />
-        <button onClick={onClickHandler}>{text}</button>
         <div>input: {inputValue}</div>
       </Suspense>
     </>

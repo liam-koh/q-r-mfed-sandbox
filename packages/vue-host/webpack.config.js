@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
+const TerserPlugin = require('terser-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const localEntryUrl = 'home@http://localhost:3002/remoteEntry.js';
 const prodEntryUrl =
@@ -12,12 +14,13 @@ const prodEntryUrl =
 module.exports = (env = {}) => ({
   mode: 'development',
   cache: false,
-  devtool: 'source-map',
+  devtool: false,
   optimization: {
-    minimize: false,
+    minimize: true,
+    minimizer: [new TerserPlugin(), new UglifyJsPlugin()],
   },
   target: 'web',
-  entry: path.resolve(__dirname, './src/bootstrap.js'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     publicPath: 'auto',
   },
@@ -53,13 +56,7 @@ module.exports = (env = {}) => ({
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {},
-          },
-          'css-loader',
-        ],
+        use: ['vue-style-loader', 'css-loader'],
       },
     ],
   },
@@ -82,6 +79,9 @@ module.exports = (env = {}) => ({
           singleton: true,
           requiredVersion: deps['react-dom'],
         },
+        vue: {
+          eager: true,
+        }
       },
     }),
     new HtmlWebpackPlugin({

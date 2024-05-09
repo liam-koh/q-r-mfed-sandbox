@@ -18,5 +18,8 @@
     "v:build": "yarn workspace vue-host build",
     "r:build": "yarn workspace react-remote build",
     "build": "yarn q-host:build && yarn v-host:build && yarn remote:build"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.35.2"
   }
 }
