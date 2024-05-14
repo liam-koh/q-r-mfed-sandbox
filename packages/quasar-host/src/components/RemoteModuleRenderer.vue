@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, onUpdated, watch } from 'vue';
 import { Container, Root, createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import React from 'react';
 
 /**
@@ -41,15 +42,21 @@ const updateReactComponent = () => {
   console.log('$$$$ update', root.value);
   if (!!error.value || !remoteModule.value || !root.value) return;
 
-  if (!reactRoot.value) {
-    reactRoot.value = createRoot(root.value); // bundle의 element를 넣음
-  }
-  // root에서 컴포넌트 초기화 진행
-  reactRoot.value.render(
-    // TODO: update시에도 써도 되는지 체크
+  // if (!reactRoot.value) {
+  //   reactRoot.value = createRoot(root.value); // bundle의 element를 넣음
+  // }
+  // // root에서 컴포넌트 초기화 진행
+  // reactRoot.value.render(
+  //   // TODO: update시에도 써도 되는지 체크
+  //   React.createElement(remoteModule.value, {
+  //     ...props.props,
+  //   })
+  // );
+  ReactDOM.render(
     React.createElement(remoteModule.value, {
       ...props.props,
-    })
+    }),
+    root.value
   );
 };
 

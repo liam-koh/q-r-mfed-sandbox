@@ -20,13 +20,14 @@ const RQuery = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error fetching data</div>;
 
+  const slicedData = data.slice(0, 10);
+
   return (
     <div>
-      <h1>Posts</h1>
       <ul>
-        {data.map(post => (
+        {slicedData.map((post) => (
           <li key={post.id}>
-            <h2>{post.title}</h2>
+            <p>{post.title}</p>
             <p>{post.body}</p>
           </li>
         ))}

@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeUnmount, onUpdated } from 'vue';
+import { ref, onMounted, onBeforeUnmount, onUpdated } from 'vue/dist/vue.esm-bundler.js';
 import { createRoot } from 'react-dom/client';
 import ReactDOM from 'react-dom';
 import React from 'react';
@@ -31,8 +31,19 @@ export default {
 
       ReactDOM.render(
         React.createElement(ButtonComponent.value, props),
-        root.value,
+        root.value
       );
+
+      // root.value = createRoot(root.value); // bundle의 element를 넣음
+      // if (!root.value) {
+      // }
+      // // root에서 컴포넌트 초기화 진행
+      // root.value.render(
+      //   // TODO: update시에도 써도 되는지 체크
+      //   React.createElement(ButtonComponent.value, {
+      //     ...props.props,
+      //   })
+      // );
     }
 
     function unmountReactComponent() {
@@ -50,6 +61,7 @@ export default {
       })
       .catch((e) => {
         error.value = e;
+        console.error('error', e);
       });
 
     return { root, error };

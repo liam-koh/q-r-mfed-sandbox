@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index',
   mode: 'development',
-  devtool: 'source-map',
+  devtool: false,
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
