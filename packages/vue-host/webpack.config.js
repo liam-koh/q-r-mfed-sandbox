@@ -18,7 +18,7 @@ module.exports = (env = {}) => ({
   },
   target: 'web',
   entry: path.resolve(__dirname, './src/bootstrap.js'),
-  output: {
+  output: {B
     publicPath: 'auto',
   },
   resolve: {

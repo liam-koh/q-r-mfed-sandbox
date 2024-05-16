@@ -37,7 +37,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'layout',
       remotes: {
-        home: localEntryUrl,
+        home: prodEntryUrl,
       },
       shared: {
         ...deps,

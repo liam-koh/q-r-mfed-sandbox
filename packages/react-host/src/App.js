@@ -1,13 +1,12 @@
 import React from 'react';
+import RemoteComponent from './RemoteComponent';
 
-const RemoteButton = React.lazy(() => import('home/Button'));
+// const RemoteButton = React.lazy(() => import('home/Button'));
 
 const App = () => (
   <div>
     <h1>MFed react-react</h1>
-    <React.Suspense fallback="Loading Button">
-      <RemoteButton />
-    </React.Suspense>
+    <RemoteComponent />
   </div>
 );
 
